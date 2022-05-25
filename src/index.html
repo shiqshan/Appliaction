@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 以数组的形式返回对象各个属性的键名
+    function getKeys(obj) {
+        return Object.keys(obj)
+    }
+
+    //数组反转
+    function _reverse(array) {
+        let arr = []
+        array.forEach(item => {
+            arr.unshift(item)
+        })
+        return arr
+    }
+
+    //数组转字符串
+    function _join(array) {
+        let str = ''
+        array.forEach( item => {
+            str +=item
+        })
+        return str
+    }
+
+    // 数组最大值
+    function _max(array) {
+        let max = Math.max(...array)
+        return max
+    }
+
+    //splice使用  增加或者删除
+    let nums = ["1", "2", "3", "4"];
+    nums.splice(1,1,8,9)
+
+    //this指向,使obj对象中fn函数返回该对象中a属性和b属性的和
+    var obj = {
+        a: 1,
+        b: 2,
+        fn: function(){
+            console.log(this)
+           return this.a + this.b
+        }
+    }
+
+    //请补全JavaScript代码，完成类的继承。要求如下：
+    // 1. "Chinese"类继承于"Human"类
+    // 2. "Human"类实现一个函数"getName"，返回该实例的"name"属性
+    // 3. "Chinese"类构造函数有两个参数，分别为"name"、"age"
+    // 4. "Chinese"类实现一个函数"getAge"，返回该实例的"age"属性
+    class Human {
+        constructor(name) {
+            this.name = name
+            this.kingdom = 'animal'
+            this.color = ['yellow', 'white', 'brown', 'black']
+        }
+        // 补全代码
+        getName(){
+            return this.name
+        }
+    }
+
+    // 补全代码
+    class Chinese extends Human{
+        constructor(name,age) {
+            super(name)
+            this.age = age
+        }
+        getAge(){
+            return this.age
+        }
+    }
+</script>
+</body>
+</html>
