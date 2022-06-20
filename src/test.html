@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(first, last, age, eyecolor) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eyecolor;
+    }
+
+    Person.prototype.sex = '男';
+    Person.prototype.getName = function () {
+        return this.firstName + this.lastName
+    }
+    var myFather = new Person("John", "Doe", 50, "blue");
+    myFather.kkk = 123;
+
+    // console.log(myFather, myFather.getName())
+
+    class Aclass {
+        constructor() {
+            this.myname = 'a'
+        }
+
+        static type = 'TYPE'
+
+        getName() {
+            console.log(this, this.myname)
+            return this.myname
+        }
+    }
+
+    //函数声明和类声明之间的一个重要区别在于, 函数声明会提升，类声明不会。
+    class Bclass extends Aclass {
+        constructor() {
+            super()
+            this.myname = 'b'
+        }
+
+        set setName(name) {
+            this.myname = name
+        }
+
+        get getName() {
+            return this.myname
+        }
+    }
+
+    let p = new Aclass()
+    let obj = new Bclass()
+
+    //使用setter 和 getter 不带括号
+    Object.defineProperty(obj, 'property1', {
+        value: 1,
+        get: function () {
+            return this.value
+        },
+        set: function (value) {
+        }
+    })
+    console.log(obj)
+    obj.setName = 'jack'
+    console.log(obj.getName)
+
+</script>
+</body>
+</html>
