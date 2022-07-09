@@ -18,7 +18,7 @@ class Index extends Component {
                 <MySider/>
                 <Layout className="site-layout">
                     <Header/>
-                    <Content className="site-layout-background" style={{
+                    <Content className="site-layout-background wx-content" style={{
                         margin: '24px 16px',
                         padding: 24,
                         minHeight: 280,

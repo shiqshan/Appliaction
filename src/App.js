@@ -9,7 +9,7 @@ class App extends Component {
             <>
                 <Routes>
                     <Route path="/*" element={<Index/>}/>
-                    <Route exact path="/" render={() => (< Navigate to="/index"/>)}></Route>
+                    <Route exact path="*" render={() => (< Navigate to="/index"/>)}></Route>
                 </Routes>
             </>
         );
