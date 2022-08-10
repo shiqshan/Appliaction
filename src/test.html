@@ -6,67 +6,79 @@
 </head>
 <body>
 <script>
-    function Person(first, last, age, eyecolor) {
+    function Person(first, last, age) {
         this.firstName = first;
         this.lastName = last;
         this.age = age;
-        this.eyeColor = eyecolor;
+
+        // return {
+        //     a: 1,
+        //     b: 2
+        // }
+        // return 1
     }
+    let myFather = new Person("John", "Doe", 50,);
+    console.log(myFather.__proto__)
 
-    Person.prototype.sex = '男';
-    Person.prototype.getName = function () {
-        return this.firstName + this.lastName
-    }
-    var myFather = new Person("John", "Doe", 50, "blue");
-    myFather.kkk = 123;
+    //
+    // Person.prototype.sex = '男';
+    // Person.prototype.getName = function () {
+    //     return this.firstName + this.lastName
+    // }
+    // var myFather = new Person("John", "Doe", 50, "blue");
+    // myFather.kkk = 123;
+    //
+    // class Aclass {
+    //     constructor() {
+    //         this.myname = 'a'
+    //     }
+    //
+    //     static type = 'TYPE'
+    //
+    //     getName() {
+    //         console.log(this, this.myname)
+    //         return this.myname
+    //     }
+    // }
+    // //函数声明和类声明之间的一个重要区别在于, 函数声明会提升，类声明不会。
+    // class Bclass extends Aclass {
+    //     constructor() {
+    //         super()
+    //         this.myname = 'b'
+    //     }
+    //
+    //     set setName(name) {
+    //         this.myname = name
+    //     }
+    //
+    //     get getName() {
+    //         return this.myname
+    //     }
+    // }
+    //
+    // let p = new Aclass()
+    // let obj = new Bclass()
 
-    // console.log(myFather, myFather.getName())
+    // var a=10;
+    // function test(){
+    //     console.log(a);
+    //     a=100;
+    //     console.log(this.a);
+    //     var a;
+    //     console.log(a);
+    // }
+    // test();
 
-    class Aclass {
-        constructor() {
-            this.myname = 'a'
-        }
-
-        static type = 'TYPE'
-
-        getName() {
-            console.log(this, this.myname)
-            return this.myname
-        }
-    }
-
-    //函数声明和类声明之间的一个重要区别在于, 函数声明会提升，类声明不会。
-    class Bclass extends Aclass {
-        constructor() {
-            super()
-            this.myname = 'b'
-        }
-
-        set setName(name) {
-            this.myname = name
-        }
-
-        get getName() {
-            return this.myname
-        }
-    }
-
-    let p = new Aclass()
-    let obj = new Bclass()
-
-    //使用setter 和 getter 不带括号
-    Object.defineProperty(obj, 'property1', {
-        value: 1,
-        get: function () {
-            return this.value
-        },
-        set: function (value) {
-        }
-    })
-    console.log(obj)
-    obj.setName = 'jack'
-    console.log(obj.getName)
-
+    // var a = 1;
+    // function test(){
+    //     // 位置A
+    //     console.log(a)
+    //     let a = 2
+    //     // class a {}
+    //     console.log(a)
+    //     // 位置B
+    // }
+    // test();
 </script>
 </body>
 </html>
