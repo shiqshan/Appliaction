@@ -5,11 +5,13 @@ import Header from "./header";
 import {Route, Routes} from "react-router-dom";
 import Home from "../componets/home/home";
 import About from "../componets/about/about";
+import TSDemo from "../pages/tsdemo/demo.tsx";
 
 const {Content} = Layout
 class Index extends Component {
+
     componentDidMount() {
-        console.log(this.props)
+
     }
 
     render() {
@@ -27,6 +29,7 @@ class Index extends Component {
                         <Routes>
                             <Route path={'/nav_1'} element={<Home/>}></Route>
                             <Route path={'/nav_2'} element={<About/>}></Route>
+                            <Route path={'/nav_3'} element={<TSDemo/>}></Route>
                         </Routes>
                     </Content>
                 </Layout>
