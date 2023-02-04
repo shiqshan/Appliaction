@@ -77,6 +77,36 @@
             return this.age
         }
     }
+
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.getName = function () {
+            return this.name
+        }
+
+    }
+
+    function Child() {
+        Person.call(this, 'ss', 30)
+    }
+
+    //原型的理解
+    let p = new Person('小明', 20)
+    console.log('9898Person.prototype', Person.prototype)
+    console.log('9898 p._proto_', p.__proto__)
+
+    /**
+     * 继承
+     *  1,原型链继承， 子类的原型， 指向父类实例
+     *  2,构造继承， 复制父类的实例属性给子类
+     */
+    // 原型链继承
+    let child = new Child();
+    // Child.prototype = p;
+    console.log(child.getName())
+
+    //基本数据类型： string number null undefind boolean object symbol bigInt
 </script>
 </body>
 </html>
