@@ -24,8 +24,8 @@
     //数组转字符串
     function _join(array) {
         let str = ''
-        array.forEach( item => {
-            str +=item
+        array.forEach(item => {
+            str += item
         })
         return str
     }
@@ -38,15 +38,15 @@
 
     //splice使用  增加或者删除
     let nums = ["1", "2", "3", "4"];
-    nums.splice(1,1,8,9)
+    nums.splice(1, 1, 8, 9)
 
     //this指向,使obj对象中fn函数返回该对象中a属性和b属性的和
     var obj = {
         a: 1,
         b: 2,
-        fn: function(){
+        fn: function () {
             console.log(this)
-           return this.a + this.b
+            return this.a + this.b
         }
     }
 
@@ -61,22 +61,41 @@
             this.kingdom = 'animal'
             this.color = ['yellow', 'white', 'brown', 'black']
         }
+
         // 补全代码
-        getName(){
+        getName() {
             return this.name
         }
     }
 
     // 补全代码
-    class Chinese extends Human{
-        constructor(name,age) {
+    class Chinese extends Human {
+        constructor(name, age) {
             super(name)
             this.age = age
         }
-        getAge(){
+
+        getAge() {
             return this.age
         }
     }
+
+    class Gege {
+        constructor() {
+            this.name = 'skfhjfs'
+        }
+
+        get getName() {
+            return this.name
+        }
+
+        set setName(value) {
+            this.name = value
+        }
+    }
+
+    const g = new Gege()
+    console.log(g, g.name)
 
     function Person(name, age) {
         this.name = name;
@@ -84,6 +103,10 @@
         this.getName = function () {
             return this.name
         }
+
+        // Person.prototype.getAge = function () {
+        //     return this.age
+        // }
 
     }
 
@@ -93,18 +116,19 @@
 
     //原型的理解
     let p = new Person('小明', 20)
-    console.log('9898Person.prototype', Person.prototype)
+    console.log('9898Person.prototype', Person.prototype, p)
     console.log('9898 p._proto_', p.__proto__)
+    console.log('9898 p._proto_ == Person.prototype', p.__proto__ == Person.prototype)
 
     /**
      * 继承
      *  1,原型链继承， 子类的原型， 指向父类实例
      *  2,构造继承， 复制父类的实例属性给子类
      */
-    // 原型链继承
+        // 原型链继承
+        // Child.prototype = p;
     let child = new Child();
-    // Child.prototype = p;
-    console.log(child.getName())
+    console.log(child, child.getName())
 
     //基本数据类型： string number null undefind boolean object symbol bigInt
 </script>
